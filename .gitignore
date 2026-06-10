@@ -1,9 +1,9 @@
 ckpt/
 data/
-results/
-wandb/
-data/
-__pycache__/
-*.pyc
 *.egg-info/
+figures/
+*.pyc
+__pycache__/
+results/
 .vscode/
+wandb/
