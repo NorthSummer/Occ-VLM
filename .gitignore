@@ -1,0 +1,9 @@
+ckpt/
+data/
+results/
+wandb/
+data/
+__pycache__/
+*.pyc
+*.egg-info/
+.vscode/
