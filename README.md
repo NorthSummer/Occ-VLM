@@ -31,7 +31,7 @@
 ---
 
 ## News
-- [2025-6] Code & model released. — [Model]([Electronics/occ3dllm-LLaVA-Qwen-video](https://huggingface.co/Electronics/occ3dllm-LLaVA-Qwen-video)).
+- [2025-6] Code & model released. — [Model](https://huggingface.co/Electronics/occ3dllm-LLaVA-Qwen-video).
 
 ## Supported Tasks
 
