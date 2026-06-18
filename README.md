@@ -66,14 +66,32 @@ See [data preprocessing guide](scripts/3d/preprocessing/README.md) for full inst
 
 
 ## Evaluation
+Evaluate on each downstream task with the corresponding script:
 
 ```bash
-sh scripts/3d/eval/eval_scanrefer.sh <CKPT_NAME> <SAMPLING> <MAX_FRAMES>
-sh scripts/3d/eval/eval_multi3drefer.sh <CKPT_NAME> <SAMPLING> <MAX_FRAMES>
-sh scripts/3d/eval/eval_sqa3d.sh <CKPT_NAME> <SAMPLING> <MAX_FRAMES>
-sh scripts/3d/eval/eval_scanqa.sh <CKPT_NAME> <SAMPLING> <MAX_FRAMES>
-sh scripts/3d/eval/eval_scan2cap.sh <CKPT_NAME> <SAMPLING> <MAX_FRAMES>
+# Usage: sh scripts/3d/eval/eval_<task>.sh <CKPT_NAME> <SAMPLING> <MAX_FRAMES>
+#
+# Parameters:
+#   CKPT_NAME:    Checkpoint name under ./ckpt/ (e.g., occ3dllm-LLaVA-Qwen-video-mm-only-v2)
+#   SAMPLING:     Frame sampling strategy — uniform | ratio90 | ratio95
+#     - uniform:  Uniform sampling (equally spaced frames)
+#     - ratio90:  Adaptive sampling until ≥90% scene voxel coverage
+#     - ratio95:  Adaptive sampling until ≥95% scene voxel coverage
+#   MAX_FRAMES:   Upper limit on sampled frames (e.g., 32)
+
+# 3D Visual Grounding
+sh scripts/3d/eval/eval_scanrefer.sh $CKPT $SAMPLING $MAX_FRAMES
+sh scripts/3d/eval/eval_multi3drefer.sh $CKPT $SAMPLING $MAX_FRAMES
+
+# 3D QA
+sh scripts/3d/eval/eval_sqa3d.sh $CKPT $SAMPLING $MAX_FRAMES
+sh scripts/3d/eval/eval_scanqa.sh $CKPT $SAMPLING $MAX_FRAMES
+
+# 3D Dense Captioning
+sh scripts/3d/eval/eval_scan2cap.sh $CKPT $SAMPLING $MAX_FRAMES
 ```
+
+Use `_lora` variants for LoRA checkpoints (e.g., `eval_scanrefer_lora.sh`).
 
 Add `_lora` suffix for LoRA checkpoints (e.g., `eval_scanrefer_lora.sh`).
 
