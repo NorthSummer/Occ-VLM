@@ -13,16 +13,13 @@
 </div>
 
 <div align="center">
-<a>Jianing Li<sup>*</sup></a>,
-<a>Zhou Fang<sup>*</sup></a>,
-<a>Yijiang Liu<sup>*</sup></a> and
-<a>Li Du<sup>&ddagger;</sup></a>
+<a>Jianing Li</a>,
+<a>Zhou Fang</a>,
+<a>Yijiang Liu</a> and
+<a>Li Du</a>
 
 <br>
 <strong>School of Electronic Science and Engineering, Nanjing University</strong>
-<br>
-<p style="font-size: 12px;"><sup>*</sup>Equal contribution.
-<sup>&ddagger;</sup> Corresponding author.</p>
 </div>
 
 ---
@@ -34,8 +31,7 @@
 ---
 
 ## News
-- [2025-6] Code & model released.
-- [2025-5] Related work **VG-LLM** released — [Paper](https://arxiv.org/abs/2505.24625) | [Code](https://github.com/LaVi-Lab/VG-LLM).
+- [2025-6] Code & model released. — [Model]([Electronics/occ3dllm-LLaVA-Qwen-video](https://huggingface.co/Electronics/occ3dllm-LLaVA-Qwen-video)).
 
 ## Supported Tasks
 
@@ -67,19 +63,7 @@ See [data preprocessing guide](scripts/3d/preprocessing/README.md) for full inst
 3. Extract images & point clouds via provided scripts
 4. Process downstream annotations (ScanRefer, SQA3D, ScanQA, etc.)
 
-## Training
 
-Single-stage full fine-tuning with combined multi-task dataset:
-
-```bash
-sh scripts/3d/train/train_multi.sh
-```
-
-Key configurable parameters:
-- `frame_sampling_strategy`: `uniform`, `mc-ratio90`, `mc-ratio95`
-- `frames_upbound`: max frames per video
-- `world_position_embedding_type`: `avg-discrete-sin3d`, `avg-discrete-mlp`, etc.
-- `ground_head_type`: `infonce`, `mlp`, `score`
 
 ## Evaluation
 
@@ -100,27 +84,4 @@ Add `_lora` suffix for LoRA checkpoints (e.g., `eval_scanrefer_lora.sh`).
 - [EmbodiedScan](https://github.com/OpenRobotLab/EmbodiedScan) — occupancy network & preprocessing
 - [ScanNet](http://www.scan-net.org/), [ScanRefer](https://github.com/daveredrum/ScanRefer), [Multi3DRefer](https://github.com/3dlg-hcvc/M3DRef-CLIP), [SQA3D](https://github.com/SilongYong/SQA3D), [ScanQA](https://github.com/ATR-DBI/ScanQA) — datasets
 
-## Citation
 
-If you find this work useful, please consider citing:
-
-```
-@misc{zheng2024video3dllmlearningpositionaware,
-      title={Video-3D LLM: Learning Position-Aware Video Representation for 3D Scene Understanding},
-      author={Duo Zheng and Shijia Huang and Liwei Wang},
-      year={2024},
-      eprint={2412.00493},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2412.00493},
-}
-@misc{occvlm2025,
-      title={Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors},
-      author={LaVi Lab},
-      year={2025},
-      eprint={2505.24625},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2505.24625},
-}
-```
