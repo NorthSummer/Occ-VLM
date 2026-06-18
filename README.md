@@ -13,9 +13,16 @@
 </div>
 
 <div align="center">
-<a target="_blank" href="https://github.com/LaVi-Lab">LaVi Lab</a>
+<a>Jianing Li<sup>*</sup></a>,
+<a>Zhou Fang<sup>*</sup></a>,
+<a>Yijiang Liu<sup>*</sup></a> and
+<a>Li Du<sup>&ddagger;</sup></a>
+
 <br>
-<strong>The Chinese University of Hong Kong</strong>
+<strong>School of Electronic Science and Engineering, Nanjing University</strong>
+<br>
+<p style="font-size: 12px;"><sup>*</sup>Equal contribution.
+<sup>&ddagger;</sup> Corresponding author.</p>
 </div>
 
 ---
@@ -23,10 +30,6 @@
 ## Overview
 
 **Occ-VLM** extends Video-3D LLM with explicit 3D geometry priors. By integrating a SigLip-based occupancy prediction network as the vision tower, the model lifts 2D multi-view observations into dense 3D voxel features. World position embeddings inject spatial context, while a grounding head enables fine-grained 3D object localization — all unified within a single VLM.
-
-<p align="center">
-    <img src="assets/occvlm.png" width="95%"><br>
-</p>
 
 ---
 
@@ -89,16 +92,6 @@ sh scripts/3d/eval/eval_scan2cap.sh <CKPT_NAME> <SAMPLING> <MAX_FRAMES>
 ```
 
 Add `_lora` suffix for LoRA checkpoints (e.g., `eval_scanrefer_lora.sh`).
-
-## Architecture
-
-| Component | Description |
-|---|---|
-| Occ Tower | SigLip-based dense 3D occupancy predictor (EmbodiedScan) |
-| Vision Resampler | Compresses multi-view features into fixed tokens |
-| World Position Embedding | 3D sine or MLP encoding of spatial coordinates |
-| LLM | Qwen2-7B-Instruct |
-| Ground Head | Contrastive (InfoNCE) head for 3D visual grounding |
 
 ## Acknowledgements
 
