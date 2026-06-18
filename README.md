@@ -93,7 +93,6 @@ sh scripts/3d/eval/eval_scan2cap.sh $CKPT $SAMPLING $MAX_FRAMES
 
 Use `_lora` variants for LoRA checkpoints (e.g., `eval_scanrefer_lora.sh`).
 
-Add `_lora` suffix for LoRA checkpoints (e.g., `eval_scanrefer_lora.sh`).
 
 ## Acknowledgements
 
